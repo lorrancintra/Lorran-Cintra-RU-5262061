@@ -1,0 +1,186 @@
+/* RESET E PADRÃO DE FONTE */
+* {
+    margin: 0; /* remove margens padrão dos elementos */
+    padding: 0; /* remove espaçamentos padrão */
+    box-sizing: border-box; /* garante que padding e border não aumentem a largura total */
+    font-family: 'Arial', sans-serif; /* define fonte padrão para todo o site */
+}
+
+body {
+    background-color: #C9CAD9; /* cor de fundo da página */
+    color: #576490; /* cor padrão do texto */
+    line-height: 1.6; /* espaçamento entre linhas */
+    font-size: 16px; /* tamanho padrão da fonte */
+}
+
+/* HEADER E MENU */
+header {
+    background-color: #D1D2F9; /* cor de fundo do cabeçalho */
+    padding: 20px 10%; /* espaçamento interno, com 10% lateral para responsividade */
+    text-align: center; /* centraliza texto e menu */
+    border-bottom: 3px solid #7796CB; /* separa visualmente o header do conteúdo */
+}
+
+header h1 {
+    color: #576490; /* cor do título principal */
+    font-size: 2rem; /* tamanho maior para hierarquia visual */
+    margin-bottom: 5px; /* espaço abaixo do título */
+}
+
+header h3 {
+    color: #576490;
+    font-size: 1.2rem; 
+    margin-bottom: 15px;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.menu {
+    display: flex; /* transforma links em linha */
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 20px; /* espaço entre links */
+    flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
+}
+
+.menu a {
+    text-decoration: none; /* remove sublinhado padrão */
+    color: #576490; /* cor dos links */
+    font-weight: bold; /* destaque */
+    padding: 8px 15px; /* espaço interno do link */
+    border-radius: 5px; /* cantos arredondados */
+    transition: all 0.3s ease; /* animação suave no hover */
+}
+
+.menu a:hover {
+    background-color: #A3BCF9; /* muda fundo ao passar o mouse */
+    color: white; /* muda a cor do texto ao passar o mouse */
+}
+
+/* SEÇÕES PRINCIPAIS */
+section.box {
+    background-color: white; /* fundo branco para destacar conteúdo */
+    margin: 30px 10%; /* espaçamento externo para não grudar nas bordas */
+    padding: 25px; /* espaçamento interno */
+    border-radius: 10px; /* cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave para dar profundidade */
+}
+
+/* TÍTULOS DE SEÇÃO */
+section h2 {
+    color: #576490;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #7796CB; /* linha inferior para destaque visual */
+    padding-bottom: 5px;
+}
+
+/* CARDS (PORTFÓLIO OU OUTROS) */
+.card {
+    background-color: #FFFFFF; /* fundo branco separado do restante */
+    color: #576490;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 calc(30% - 20px); /* controla largura no flex e espaçamento entre cards */
+    min-width: 250px; /* largura mínima para responsividade */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+}
+
+/* LINKS DENTRO DO CARD */
+.card a {
+    color: #7796CB; /* cor de destaque */
+    text-decoration: underline; /* indica que é clicável */
+}
+
+/* FLEXBOX PRINCIPAL PARA CARDS */
+.flex {
+    display: flex; /* organiza cards em linha */
+    gap: 20px; /* espaço entre cards */
+    flex-wrap: wrap; /* permite quebra de linha em telas pequenas */
+    justify-content: space-between; /* espaço igual entre cards */
+}
+
+/* FORMULÁRIO */
+form label {
+    display: block; /* cada label ocupa linha inteira */
+    margin-top: 15px; 
+    font-weight: bold; 
+    color: #576490;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%; /* ocupa toda largura do form */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #7796CB; /* borda visível */
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #576490;
+}
+
+/* RADIO E CHECKBOX */
+form fieldset label {
+    display: flex; /* deixa input e texto na mesma linha */
+    align-items: center; /* centraliza verticalmente */
+    gap: 10px; /* espaço entre input e texto */
+    margin-bottom: 8px;
+    cursor: pointer; /* indica que é clicável */
+}
+
+form fieldset input[type="radio"],
+form fieldset input[type="checkbox"] {
+    margin: 0; /* remove margens padrões */
+    width: auto; /* mantém tamanho padrão */
+    height: auto;
+}
+
+/* BOTÃO DE ENVIO */
+form button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #7796CB; /* cor principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /* suaviza efeito de hover */
+}
+
+form button:hover {
+    background-color: #576490; /* muda cor ao passar o mouse */
+}
+
+/* TABELAS */
+table {
+    width: 100%;
+    border-collapse: collapse; /* une bordas */
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #7796CB; /* bordas das células */
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #A3BCF9; /* fundo diferente do corpo da tabela */
+    color: white; /* contraste para legibilidade */
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* menu em coluna em telas pequenas */
+        gap: 10px;
+    }
+
+    .flex {
+        flex-direction: column; /* cards empilhados em telas pequenas */
+    }
+
+    section.box {
+        margin: 20px 5%; /* reduz margem lateral para telas pequenas */
+    }
+}

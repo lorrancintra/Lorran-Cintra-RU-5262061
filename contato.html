@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ferramentas de desenvolvimento web</h1>
+        <h3>Ciência de dados</h3>
+
+        <nav class="menu">
+            <a href="sobre_mim.html">Sobre mim</a>
+            <a href="formacao.html">Formação</a>
+            <a href="portfolio.html">Portfólio</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="box">
+        <h2>Contato</h2>
+
+        <!-- CONTATO PROFISSIONAL -->
+        <div class="contato-info">
+            <p>
+                <strong>Email:</strong> <a href="mailto:lorrancintra@gmail.com">lorrancintra@gmail.com</a> |
+                <strong>Telefone / WhatsApp:</strong> <a href="tel:+5561996453006">(61) 99645-3006</a> |
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lorrancintra" target="_blank">linkedin.com/in/lorrancintra</a> |
+                <strong>GitHub:</strong> <a href="https://github.com/lorrancintra" target="_blank">github.com/lorrancintra</a>
+            </p>
+        </div>
+
+        <br><hr><br>
+
+        <!-- FORMULÁRIO -->
+        <form onsubmit="return validarFormulario()">
+
+            <label>Nome:</label>
+            <input type="text" id="nome">
+            <br>
+            <label>Email:</label>
+            <input type="email" id="email">
+            <br>
+            <label>Telefone:</label>
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+            <br>
+            <label>Mensagem:</label>
+            <textarea id="mensagem" rows="6" style="width:100%;" placeholder="Escreva sua mensagem aqui"></textarea>
+            <br>
+            <label>Assunto:</label>
+            <select id="assunto">
+                <option value="">Selecione</option>
+                <option value="duvida">Dúvida</option>
+                <option value="vaga">Vaga de estágio</option>
+                <option value="parceria">Parceria</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <fieldset>
+                <legend>Preferência de Contato</legend>
+                <label><input type="radio" name="contato" value="whatsapp"> WhatsApp</label>
+                <label><input type="radio" name="contato" value="email"> Email</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Serviços de Interesse</legend>
+                <label><input type="checkbox" value="database"> Banco de dados</label>
+                <label><input type="checkbox" value="analise"> Análise de dados</label>
+                <label><input type="checkbox" value="auto"> Automatizar</label>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- VALIDAÇÃO -->
+    <script>
+        function validarFormulario() {
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+            const assunto = document.getElementById("assunto").value;
+
+            if (nome === "") {
+                alert("Por favor, preencha o campo Nome.");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Por favor, preencha o campo Email.");
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Digite um e-mail válido.");
+                return false;
+            }
+
+            if (telefone === "") {
+                alert("Por favor, preencha o campo Telefone.");
+                return false;
+            }
+
+            if (mensagem === "") {
+                alert("Por favor, escreva uma mensagem.");
+                return false;
+            }
+
+            if (assunto === "") {
+                alert("Selecione um assunto.");
+                return false;
+            }
+
+            alert("Mensagem enviada com sucesso! (Simulação)");
+            return false;
+        }
+    </script>
+
+</body>
+</html>
